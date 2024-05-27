@@ -3284,6 +3284,17 @@ inline std::shared_ptr<table> parse_file(const std::string& filename)
     return p.parse();
 }
 
+/**
+ * Utility function to parse string as a TOML file. Returns the root table.
+ * Throws a parse_exception if the file cannot be opened.
+ */
+inline std::shared_ptr<table> parse_string(const std::string& str)
+{
+    istringstream stream(str);
+    parser p{stream};
+    return p.parse();
+}
+
 template <class... Ts>
 struct value_accept;
 
