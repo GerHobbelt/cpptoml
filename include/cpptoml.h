@@ -13,6 +13,7 @@
 #include <cstdint>
 #include <cstring>
 #include <fstream>
+#include <limits>
 #include <iomanip>
 #include <map>
 #include <memory>
