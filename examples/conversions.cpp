@@ -3,6 +3,12 @@
 
 #include "cpptoml.h"
 
+#include "monolithic_examples.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main cpptoml_conversions_example_main
+#endif
+
 int main()
 {
     auto root = cpptoml::make_table();

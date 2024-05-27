@@ -3,7 +3,13 @@
 #include <iostream>
 #include <cassert>
 
-int main(int argc, char** argv)
+#include "monolithic_examples.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main cpptoml_parse_example_main
+#endif
+
+int main(int argc, const char** argv)
 {
     if (argc < 2)
     {

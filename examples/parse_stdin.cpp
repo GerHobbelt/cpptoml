@@ -3,6 +3,8 @@
 #include <iostream>
 #include <limits>
 
+#include "monolithic_examples.h"
+
 /**
  * A visitor for toml objects that writes to an output stream in the JSON
  * format that the toml-test suite expects.
@@ -102,6 +104,10 @@ class toml_test_writer
   private:
     std::ostream& stream_;
 };
+
+#if defined(BUILD_MONOLITHIC)
+#define main cpptoml_parse_stdin_example_main
+#endif
 
 int main()
 {

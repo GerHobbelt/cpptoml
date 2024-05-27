@@ -1,7 +1,13 @@
 #include <cpptoml.h>
 #include <iostream>
 
-int main(int argc, char* argv[])
+#include "monolithic_examples.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main cpptoml_build_toml_example_main
+#endif
+
+int main(int argc, const char** argv)
 {
     std::shared_ptr<cpptoml::table> root = cpptoml::make_table();
     root->insert("Integer", 1234L);
