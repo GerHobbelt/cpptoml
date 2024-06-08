@@ -3290,7 +3290,7 @@ inline std::shared_ptr<table> parse_file(const std::string& filename)
  */
 inline std::shared_ptr<table> parse_string(const std::string& str)
 {
-    istringstream stream(str);
+    std::istringstream stream(str);
     parser p{stream};
     return p.parse();
 }
